@@ -98,12 +98,27 @@
 #
 # print(*[b[i] for i in x], sep=' | ')
 
-with open('test.txt', 'r') as fh:
-    for line in fh:
-        line = line.strip()
-        print(line)
+# with open('test.txt', 'r') as fh:
+#     for line in fh:
+#         line = line.strip()
+#         print(line)
+#
+# with open('test.txt', 'w') as out:
+#     out.write('additional line')
+#     out.write('\n')
+#     out.write(str(25))
 
-with open('test.txt', 'w') as out:
-    out.write('additional line')
-    out.write('\n')
-    out.write(str(25))
+# Using subprocess module
+# import subprocess
+# print("call print.py", '--------------', sep='\n')
+# subprocess.call('python print.py')
+# print("and now back to test")
+
+# import sys
+#
+# for arg in sys.argv[1:]:
+#     print(arg, end=' ')
+
+import requests
+r = requests.get(r'https://stepic.org/media/attachments/course67/3.6.2/580.txt')
+print(r.content)
