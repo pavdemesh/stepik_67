@@ -119,6 +119,26 @@
 # for arg in sys.argv[1:]:
 #     print(arg, end=' ')
 
-import requests
-r = requests.get(r'https://stepic.org/media/attachments/course67/3.6.2/580.txt')
-print(r.content)
+# import requests
+# r = requests.get(r'https://stepic.org/media/attachments/course67/3.6.2/580.txt')
+# print(r.content)
+
+
+x, y = 0, 0
+moves = {
+    "север": 0,
+    "юг": 0,
+    "запад": 0,
+    "восток": 0
+}
+
+num_moves = int(input())
+
+for _i in range(num_moves):
+    (direction, value) = input().split()
+    moves[direction] += int(value)
+
+end_x = x + moves["восток"] - moves["запад"]
+end_y = y + moves["север"] - moves["юг"]
+
+print(end_x, end_y, sep=" ")
